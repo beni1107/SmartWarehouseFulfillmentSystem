@@ -25,7 +25,7 @@ public class Electronics extends InventoryItem {
     
     @Override
     public String toString() {
-        return super.toString()+ " Watt: "+this.wattage;
+        return super.toString()+ " Watt: "+this.wattage +" TOTAL INSURANCE: "+this.calculateStorageInsurance();
     }
 
     public int getWattage() {
