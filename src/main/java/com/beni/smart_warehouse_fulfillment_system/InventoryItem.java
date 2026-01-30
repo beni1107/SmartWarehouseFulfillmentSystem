@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author bendz
  */
-public abstract class InventoryItem implements Storable<String> {
+public abstract class InventoryItem implements Storable<String>, Comparable<InventoryItem>  {
     private  String id;
     private String name;
     private double baseVolume;
@@ -65,5 +65,11 @@ public abstract class InventoryItem implements Storable<String> {
     public void setHazardLevel(int hazardLevel) {
         this.hazardLevel = hazardLevel;
     }
+
+    @Override
+    public int compareTo(InventoryItem o) {
+        return this.id.compareTo(o.getIdentification());
+        }
+    }
     
-}
+
