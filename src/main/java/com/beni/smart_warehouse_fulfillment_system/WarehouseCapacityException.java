@@ -18,4 +18,9 @@ public class WarehouseCapacityException extends Exception {
         super(message);
         this.amountOver=amount;
     }
+
+    public double getAmountOver() {
+        return amountOver;
+    }
+    
 }

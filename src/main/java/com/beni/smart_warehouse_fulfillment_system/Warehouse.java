@@ -53,7 +53,20 @@ public class Warehouse <T extends InventoryItem>  {
         }
     }
     
+    public void safetyAuditReport() {
+        System.out.println("--- HIGH RISK INVENTORY REPORT ---");
     
+    this.inventory.stream()
+        .filter(item -> item.getHazardLevel() > 5)
+        .forEach(item -> System.out.println("ALERT: " + item.getName() + 
+                 " [Hazard Level: " + item.getHazardLevel() + "]"));
+    
+    System.out.println("----------------------------------");
+    }
+    
+    public void sortItems() {
+        Collections.sort(this.inventory);
+    }
     public List<T> getInventory() {
         return Collections.unmodifiableList(inventory);
     }
